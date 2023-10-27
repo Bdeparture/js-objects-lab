@@ -46,3 +46,7 @@ console.log(
     ' - ' +
     aCar.previous_owners[0].address
 )
+
+for (let i = 0 ; i < aCar.previous_owners.length ; i += 1) {
+  console.log(aCar.previous_owners[i].name);
+}
