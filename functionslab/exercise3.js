@@ -1,12 +1,17 @@
 fetch("https://jsonplaceholder.typicode.com/todos")
   .then(response => response.json())
   .then(json => {
-     const completed = json.filter(function (todo){
-        return todo.completed == false;
+     const uncompleted = json.filter(function (todo){
+        return todo.completed == false
+     }).map(function(uncompleted){
+        userId = uncompleted.userId;
+        title = uncompleted.title
+        return{
+          userId:userId,
+          title:title,
+        }
      })  // Complete this code
-     completed.forEach( (todo, index) => {
-      console.log(`${todo.userId} - ${todo.completed}`)
-    })
+     console.log(uncompleted)
   })
   .catch(function(err) { 
     console.log(err);
